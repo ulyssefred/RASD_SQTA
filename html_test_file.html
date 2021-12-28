@@ -1,0 +1,2766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>This is an unittest report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.3"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>This is an unittest report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2021-12-28 19:31:52</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.006999</p>
+<p class='attribute'><strong>Status:</strong> Pass 33</p>
+
+<p class='description'></p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_Node.TestNode</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test__get_next_day</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: setUpTestcase
+Get next day successfully
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_add_request</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_PriorityQueue.TestPriorityQueue</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',2)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_pop_priority</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_push</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        pass</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.2: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_Request.TestRequest</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',2)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test__str__output</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_cost</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        pass</a>
+
+    <div id='div_pt3.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.2: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_Scheduler.TestScheduler</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',2)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_add_request</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_is_schedule_done</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
+        pass</a>
+
+    <div id='div_pt4.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.2: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_System.TestSystem</td>
+    <td>17</td>
+    <td>17</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',17)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_actual_time</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_available_nodes</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        pass</a>
+
+    <div id='div_pt5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.2: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_available_nodes_gpu</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.3')" >
+        pass</a>
+
+    <div id='div_pt5.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.3: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_available_nodes_large</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.4')" >
+        pass</a>
+
+    <div id='div_pt5.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.4: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_available_nodes_medium</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.5')" >
+        pass</a>
+
+    <div id='div_pt5.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.5: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_available_nodes_short</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.6')" >
+        pass</a>
+
+    <div id='div_pt5.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.6: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_available_time</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.7')" >
+        pass</a>
+
+    <div id='div_pt5.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.7: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_available_time_gpu</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.8')" >
+        pass</a>
+
+    <div id='div_pt5.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.8: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_available_time_large</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.9')" >
+        pass</a>
+
+    <div id='div_pt5.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.9: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_available_time_medium</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.10')" >
+        pass</a>
+
+    <div id='div_pt5.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.10: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_available_time_short</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.11')" >
+        pass</a>
+
+    <div id='div_pt5.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.11: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_gpu_nodes</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.12')" >
+        pass</a>
+
+    <div id='div_pt5.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.12: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_large_nodes</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.13')" >
+        pass</a>
+
+    <div id='div_pt5.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.13: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_medium_nodes</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.14')" >
+        pass</a>
+
+    <div id='div_pt5.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.14: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_short_nodes</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.15')" >
+        pass</a>
+
+    <div id='div_pt5.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.15: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_is_week</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.16')" >
+        pass</a>
+
+    <div id='div_pt5.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.16: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function is_week() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_next_cycle_end</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.17')" >
+        pass</a>
+
+    <div id='div_pt5.17' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.17: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function is_week() running correctly
+tearDownTestcase
+setUpTestcase
+function next_cycle_end() running correctly
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_User.UnittestUserCase</td>
+    <td>8</td>
+    <td>8</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',8)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_User_Creat_request01</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function is_week() running correctly
+tearDownTestcase
+setUpTestcase
+function next_cycle_end() running correctly
+tearDownTestcase
+setUpTestcase
+Successfully created request
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_User_Creat_request02</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.2')" >
+        pass</a>
+
+    <div id='div_pt6.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.2: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function is_week() running correctly
+tearDownTestcase
+setUpTestcase
+function next_cycle_end() running correctly
+tearDownTestcase
+setUpTestcase
+Successfully created request
+tearDownTestcase
+setUpTestcase
+Successfully created request with gpu
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_User_Creat_request03</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.3')" >
+        pass</a>
+
+    <div id='div_pt6.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.3: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function is_week() running correctly
+tearDownTestcase
+setUpTestcase
+function next_cycle_end() running correctly
+tearDownTestcase
+setUpTestcase
+Successfully created request
+tearDownTestcase
+setUpTestcase
+Successfully created request with gpu
+tearDownTestcase
+setUpTestcase
+Successfully raise invalid request type exception
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_User_init_01</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.4')" >
+        pass</a>
+
+    <div id='div_pt6.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.4: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function is_week() running correctly
+tearDownTestcase
+setUpTestcase
+function next_cycle_end() running correctly
+tearDownTestcase
+setUpTestcase
+Successfully created request
+tearDownTestcase
+setUpTestcase
+Successfully created request with gpu
+tearDownTestcase
+setUpTestcase
+Successfully raise invalid request type exception
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, student, credit : 40320.
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_User_init_02</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.5')" >
+        pass</a>
+
+    <div id='div_pt6.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.5: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function is_week() running correctly
+tearDownTestcase
+setUpTestcase
+function next_cycle_end() running correctly
+tearDownTestcase
+setUpTestcase
+Successfully created request
+tearDownTestcase
+setUpTestcase
+Successfully created request with gpu
+tearDownTestcase
+setUpTestcase
+Successfully raise invalid request type exception
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, student, credit : 40320.
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, researcher, credit : 483840.
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_User_init_03</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.6')" >
+        pass</a>
+
+    <div id='div_pt6.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.6: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function is_week() running correctly
+tearDownTestcase
+setUpTestcase
+function next_cycle_end() running correctly
+tearDownTestcase
+setUpTestcase
+Successfully created request
+tearDownTestcase
+setUpTestcase
+Successfully created request with gpu
+tearDownTestcase
+setUpTestcase
+Successfully raise invalid request type exception
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, student, credit : 40320.
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, researcher, credit : 483840.
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, it_support, credit : 5806080.
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_User_init_04</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.7')" >
+        pass</a>
+
+    <div id='div_pt6.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.7: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function is_week() running correctly
+tearDownTestcase
+setUpTestcase
+function next_cycle_end() running correctly
+tearDownTestcase
+setUpTestcase
+Successfully created request
+tearDownTestcase
+setUpTestcase
+Successfully created request with gpu
+tearDownTestcase
+setUpTestcase
+Successfully raise invalid request type exception
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, student, credit : 40320.
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, researcher, credit : 483840.
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, it_support, credit : 5806080.
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, student, credit : 400.
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_User_init_05</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.8')" >
+        pass</a>
+
+    <div id='div_pt6.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.8: setUpTestcase
+Get next day successfully
+tearDownTestcase
+setUpTestcase
+Modify request lists and available time successfully
+tearDownTestcase
+setUpTestcase
+function pop running correctly, request have been pop from priority queue
+tearDownTestcase
+setUpTestcase
+function push running correctly, request have been pushed into priority queue
+tearDownTestcase
+setUpTestcase
+function __str__ return resultrequest test short by Tester: None
+tearDownTestcase
+setUpTestcase
+function get_cost running correctly
+tearDownTestcase
+setUpTestcase
+Function add_request running well, modify queue correctly
+tearDownTestcase
+setUpTestcase
+Function is_schedule_done running well, return correctly Bool value
+tearDownTestcase
+setUpTestcase
+function get_actual_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_large() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_medium() running correctly
+tearDownTestcase
+setUpTestcase
+get_available_nodes_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_gpu() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_large() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_medium() running correctly
+tearDownTestcase
+setUpTestcase
+function get_available_time_short() running correctly
+tearDownTestcase
+setUpTestcase
+function get_get_gpu_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_large_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_medium_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function get_short_nodes() running correctly
+tearDownTestcase
+setUpTestcase
+function is_week() running correctly
+tearDownTestcase
+setUpTestcase
+function next_cycle_end() running correctly
+tearDownTestcase
+setUpTestcase
+Successfully created request
+tearDownTestcase
+setUpTestcase
+Successfully created request with gpu
+tearDownTestcase
+setUpTestcase
+Successfully raise invalid request type exception
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, student, credit : 40320.
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, researcher, credit : 483840.
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, it_support, credit : 5806080.
+tearDownTestcase
+setUpTestcase
+Successfully creating the correct user: Tester, student, credit : 400.
+tearDownTestcase
+setUpTestcase
+Successfully raise invalid user_type exception
+tearDownTestcase
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>33</td>
+    <td>33</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
