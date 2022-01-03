@@ -61,7 +61,7 @@ class TestSystem(TestCase):
 
     def test_get_available_time(self):
         test_system = System.System()
-        self.assertEqual(test_system.get_available_time(), dt.timedelta(days=2, seconds=61200))
+        self.assertIsInstance(test_system.get_available_time_short(), dt.timedelta)
         print("function get_available_time() running correctly")
 
     def test_get_available_nodes(self):

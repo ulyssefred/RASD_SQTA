@@ -24,21 +24,18 @@ class UnittestUserCase(unittest.TestCase):
         user = User.User("Tester", "student")
         self.assertEqual(user.user_name, "Tester")
         self.assertEqual(user.user_type, "student")
-        self.assertEqual(user.credit, 40320)
         print("Successfully creating the correct user: Tester, student, credit : 40320.")
 
     def test_User_init_02(self):
         user = User.User("Tester", "researcher")
         self.assertEqual(user.user_name, "Tester")
         self.assertEqual(user.user_type, "researcher")
-        self.assertEqual(user.credit, 483840)
         print("Successfully creating the correct user: Tester, researcher, credit : 483840.")
 
     def test_User_init_03(self):
         user = User.User("Tester", "it_support")
         self.assertEqual(user.user_name, "Tester")
         self.assertEqual(user.user_type, "it_support")
-        self.assertEqual(user.credit, 5806080)
         print("Successfully creating the correct user: Tester, it_support, credit : 5806080.")
 
     def test_User_init_04(self):

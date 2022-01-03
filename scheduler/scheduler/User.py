@@ -19,11 +19,11 @@ class User:
 
         if credit is None:
             if user_type == "student":
-                self.credit = 40320
+                self.credit = 50000
             if user_type == "researcher":
-                self.credit = 483840
+                self.credit = 100000
             if user_type == "it_support":
-                self.credit = 5806080
+                self.credit = 0
         else:
             self.credit = credit
 
@@ -50,4 +50,6 @@ class User:
         if cost < 0:
             raise ValueError("Cost cannot be below 0.")
         self.credit -= cost
+        if self.credit < 0:
+            return Request.Request("Insufficient balance", nbr_nodes, dt.timedelta(hours=time), req_type, self)
         return Request.Request(title, nbr_nodes, dt.timedelta(hours=time), req_type, self)

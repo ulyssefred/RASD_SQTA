@@ -10,7 +10,6 @@
 body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
 table       { font-size: 100%; }
 pre         { }
-
 /* -- heading ---------------------------------------------------------------------- */
 h1 {
 	font-size: 16pt;
@@ -20,25 +19,20 @@ h1 {
     margin-top: 0ex;
     margin-bottom: 1ex;
 }
-
 .heading .attribute {
     margin-top: 1ex;
     margin-bottom: 0;
 }
-
 .heading .description {
     margin-top: 4ex;
     margin-bottom: 6ex;
 }
-
 /* -- css div popup ------------------------------------------------------------------------ */
 a.popup_link {
 }
-
 a.popup_link:hover {
     color: red;
 }
-
 .popup_window {
     display: none;
     position: relative;
@@ -52,7 +46,6 @@ a.popup_link:hover {
     font-size: 8pt;
     width: 500px;
 }
-
 }
 /* -- report ------------------------------------------------------------------------ */
 #show_detail_line {
@@ -82,19 +75,15 @@ a.popup_link:hover {
 .errorCase  { color: #c00; font-weight: bold; }
 .hiddenRow  { display: none; }
 .testcase   { margin-left: 2em; }
-
-
 /* -- ending ---------------------------------------------------------------------- */
 #ending {
 }
-
 </style>
 
 </head>
 <body>
 <script language="javascript" type="text/javascript"><!--
 output_list = Array();
-
 /* level - 0:Summary; 1:Failed; 2:All */
 function showCase(level) {
     trs = document.getElementsByTagName("tr");
@@ -119,8 +108,6 @@ function showCase(level) {
         }
     }
 }
-
-
 function showClassDetail(cid, count) {
     var id_list = Array(count);
     var toHide = 1;
@@ -148,8 +135,6 @@ function showClassDetail(cid, count) {
         }
     }
 }
-
-
 function showTestDetail(div_id){
     var details_div = document.getElementById(div_id)
     var displayState = details_div.style.display
@@ -162,15 +147,12 @@ function showTestDetail(div_id){
         details_div.style.display = 'none'
     }
 }
-
-
 function html_escape(s) {
     s = s.replace(/&/g,'&amp;');
     s = s.replace(/</g,'&lt;');
     s = s.replace(/>/g,'&gt;');
     return s;
 }
-
 /* obsoleted by detail in <div>
 function showOutput(id, name) {
     var w = window.open("", //url
@@ -186,16 +168,14 @@ function showOutput(id, name) {
 }
 */
 --></script>
-
 <div class='heading'>
 <h1>This is an unittest report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2021-12-28 19:31:52</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.006999</p>
+<p class='attribute'><strong>Start Time:</strong> 2022-01-03 17:53:39</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.005004</p>
 <p class='attribute'><strong>Status:</strong> Pass 33</p>
 
 <p class='description'></p>
 </div>
-
 
 
 <p id='show_detail_line'>Show
@@ -233,11 +213,9 @@ function showOutput(id, name) {
 <tr id='pt1.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test__get_next_day</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
         pass</a>
-
     <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
@@ -253,18 +231,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt1.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_add_request</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
         pass</a>
-
     <div id='div_pt1.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
@@ -283,7 +258,6 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
@@ -299,11 +273,9 @@ tearDownTestcase
 <tr id='pt2.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_pop_priority</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
         pass</a>
-
     <div id='div_pt2.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
@@ -325,18 +297,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt2.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_push</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
         pass</a>
-
     <div id='div_pt2.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
@@ -361,7 +330,6 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
@@ -377,11 +345,9 @@ tearDownTestcase
 <tr id='pt3.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test__str__output</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
         pass</a>
-
     <div id='div_pt3.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
@@ -409,18 +375,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt3.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_cost</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
         pass</a>
-
     <div id='div_pt3.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.2').style.display = 'none' " >
@@ -451,7 +414,6 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
@@ -467,11 +429,9 @@ tearDownTestcase
 <tr id='pt4.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_add_request</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
         pass</a>
-
     <div id='div_pt4.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
@@ -505,18 +465,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt4.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_is_schedule_done</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
         pass</a>
-
     <div id='div_pt4.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.2').style.display = 'none' " >
@@ -553,7 +510,6 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
@@ -569,11 +525,9 @@ tearDownTestcase
 <tr id='pt5.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_actual_time</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
         pass</a>
-
     <div id='div_pt5.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
@@ -613,18 +567,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_available_nodes</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
         pass</a>
-
     <div id='div_pt5.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.2').style.display = 'none' " >
@@ -667,18 +618,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.3' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_available_nodes_gpu</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.3')" >
         pass</a>
-
     <div id='div_pt5.3' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.3').style.display = 'none' " >
@@ -724,18 +672,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.4' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_available_nodes_large</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.4')" >
         pass</a>
-
     <div id='div_pt5.4' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.4').style.display = 'none' " >
@@ -784,18 +729,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.5' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_available_nodes_medium</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.5')" >
         pass</a>
-
     <div id='div_pt5.5' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.5').style.display = 'none' " >
@@ -847,18 +789,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.6' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_available_nodes_short</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.6')" >
         pass</a>
-
     <div id='div_pt5.6' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.6').style.display = 'none' " >
@@ -913,18 +852,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.7' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_available_time</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.7')" >
         pass</a>
-
     <div id='div_pt5.7' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.7').style.display = 'none' " >
@@ -982,18 +918,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.8' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_available_time_gpu</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.8')" >
         pass</a>
-
     <div id='div_pt5.8' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.8').style.display = 'none' " >
@@ -1054,18 +987,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.9' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_available_time_large</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.9')" >
         pass</a>
-
     <div id='div_pt5.9' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.9').style.display = 'none' " >
@@ -1129,18 +1059,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.10' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_available_time_medium</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.10')" >
         pass</a>
-
     <div id='div_pt5.10' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.10').style.display = 'none' " >
@@ -1207,18 +1134,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.11' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_available_time_short</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.11')" >
         pass</a>
-
     <div id='div_pt5.11' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.11').style.display = 'none' " >
@@ -1288,18 +1212,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.12' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_gpu_nodes</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.12')" >
         pass</a>
-
     <div id='div_pt5.12' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.12').style.display = 'none' " >
@@ -1372,18 +1293,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.13' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_large_nodes</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.13')" >
         pass</a>
-
     <div id='div_pt5.13' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.13').style.display = 'none' " >
@@ -1459,18 +1377,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.14' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_medium_nodes</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.14')" >
         pass</a>
-
     <div id='div_pt5.14' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.14').style.display = 'none' " >
@@ -1549,18 +1464,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.15' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_get_short_nodes</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.15')" >
         pass</a>
-
     <div id='div_pt5.15' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.15').style.display = 'none' " >
@@ -1642,18 +1554,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.16' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_is_week</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.16')" >
         pass</a>
-
     <div id='div_pt5.16' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.16').style.display = 'none' " >
@@ -1738,18 +1647,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt5.17' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_next_cycle_end</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.17')" >
         pass</a>
-
     <div id='div_pt5.17' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.17').style.display = 'none' " >
@@ -1837,7 +1743,6 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
@@ -1853,11 +1758,9 @@ tearDownTestcase
 <tr id='pt6.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_User_Creat_request01</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
         pass</a>
-
     <div id='div_pt6.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
@@ -1948,18 +1851,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt6.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_User_Creat_request02</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.2')" >
         pass</a>
-
     <div id='div_pt6.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.2').style.display = 'none' " >
@@ -2053,18 +1953,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt6.3' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_User_Creat_request03</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.3')" >
         pass</a>
-
     <div id='div_pt6.3' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.3').style.display = 'none' " >
@@ -2161,18 +2058,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt6.4' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_User_init_01</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.4')" >
         pass</a>
-
     <div id='div_pt6.4' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.4').style.display = 'none' " >
@@ -2272,18 +2166,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt6.5' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_User_init_02</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.5')" >
         pass</a>
-
     <div id='div_pt6.5' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.5').style.display = 'none' " >
@@ -2386,18 +2277,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt6.6' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_User_init_03</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.6')" >
         pass</a>
-
     <div id='div_pt6.6' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.6').style.display = 'none' " >
@@ -2503,18 +2391,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt6.7' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_User_init_04</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.7')" >
         pass</a>
-
     <div id='div_pt6.7' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.7').style.display = 'none' " >
@@ -2623,18 +2508,15 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
 <tr id='pt6.8' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_User_init_05</div></td>
     <td colspan='5' align='center'>
-
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.8')" >
         pass</a>
-
     <div id='div_pt6.8' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
         <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.8').style.display = 'none' " >
@@ -2746,7 +2628,6 @@ tearDownTestcase
         </pre>
     </div>
     <!--css div popup end-->
-
     </td>
 </tr>
 
@@ -2761,6 +2642,5 @@ tearDownTestcase
 </table>
 
 <div id='ending'>&nbsp;</div>
-
 </body>
 </html>
