@@ -60,24 +60,6 @@ if __name__ == "__main__":
     week_five["large"] = 0
     week_five["gpu"] = 0
     week_five["huge"] = 0
-    week_six = dict()
-    week_six["short"] = 0
-    week_six["medium"] = 0
-    week_six["large"] = 0
-    week_six["gpu"] = 0
-    week_six["huge"] = 0
-    week_seven = dict()
-    week_seven["short"] = 0
-    week_seven["medium"] = 0
-    week_seven["large"] = 0
-    week_seven["gpu"] = 0
-    week_seven["huge"] = 0
-    week_eight = dict()
-    week_eight["short"] = 0
-    week_eight["medium"] = 0
-    week_eight["large"] = 0
-    week_eight["gpu"] = 0
-    week_eight["huge"] = 0
     for user in users:
         for i in range(10):
             n = n + 1
@@ -147,18 +129,18 @@ if __name__ == "__main__":
     """
     time_start = scheduler.actual_time
     scheduler.schedule()
-    output_file = open("C:\\Users\\ulysses\\PycharmProjects\\RASD_SQTA\\outputresults.csv", 'w+')
+    output_file = open("C:\\Users\\ulysses\\PycharmProjects\\RASD_SQTA\\outputresults.csv", 'w+', newline="")
     writer = csv.writer(output_file)
     """
     Hourly node consumption price: 6 pence
     Hourly node consumption price(with gpu): 6.6 pence
     """
-    writer.writerow(["user name", "request number", "request_running_start_time", "waiting_time",
+    writer.writerow(["user name", "request number", "time round ratio", "waiting_time",
                      "running_time", "node_hour", "request_cost", "request_type", "end"])
     """
         Simulation end time
         :param max_end_time: datetime
-        """
+    """
     max_end_time = scheduler.actual_time
     for index, req in enumerate(requests):
         username = req.user.user_name
@@ -174,9 +156,10 @@ if __name__ == "__main__":
         end_time = request_running_start_time + running_time
         if end_time > max_end_time:
             max_end_time = end_time
-        writer.writerow([username, request_number, request_running_start_time, waiting_time,
+        writer.writerow([username, request_number, (waiting_time.days*24 + waiting_time.seconds/3600 +running_time.days*24 +running_time.seconds/3600)/(running_time.days*24 +
+                                                    running_time.seconds/3600), waiting_time,
                          running_time, node_hour, request_cost, req.req_type, end_time])
-        i = date.isocalendar(req.time_of_computation)[1]
+        i = date.isocalendar(end_time)[1]
         if i == 1:
             week_one[req.req_type] = 1 + week_one[req.req_type]
         elif i == 2:
@@ -187,24 +170,21 @@ if __name__ == "__main__":
             week_four[req.req_type] = 1 + week_four[req.req_type]
         elif i == 5:
             week_five[req.req_type] = 1 + week_five[req.req_type]
-        elif i == 6:
-            week_six[req.req_type] = 1 + week_six[req.req_type]
-        elif i == 7:
-            week_seven[req.req_type] = 1 + week_seven[req.req_type]
+    writer.writerow([week_one])
     print("week_one")
     print(week_one)
     print("week_two")
     print(week_two)
+    writer.writerow([week_two])
     print("week_three")
     print(week_three)
+    writer.writerow([week_three])
     print("week_four")
     print(week_four)
+    writer.writerow([week_four])
     print("week_five")
     print(week_five)
-    print("week_six")
-    print(week_six)
-    print("week_seven")
-    print(week_seven)
+    writer.writerow([week_five])
     print("Simulation start time")
     print(time_start)
     print("total available node hour without gpu")
@@ -213,6 +193,8 @@ if __name__ == "__main__":
     print(((max_end_time - time_start).seconds/3600 + (max_end_time - time_start).days*24)*8)
     print("Simulation end time")
     print(max_end_time)
+
+
 
 
 
